@@ -1,6 +1,11 @@
-#include <iostream>
+#include <iostream> 
+using namespace std;
 int main() {
-std::cout <<"Hello world";
+double fahrenheit;
+double celsius;
+cout << "請輸入華氏溫度:\n";
+cin >> fahrenheit;
+celsius = (fahrenheit-32)/9*5;
+cout << "攝氏溫度是:" << celsius;
 return 0;
-
 }
