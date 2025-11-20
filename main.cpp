@@ -7,25 +7,19 @@ Welcome to GDB Online.
 
 *******************************************************************************/
 #include <iostream>
+using namespace std;
 
-double calculateBMI(double weight_kg, double height_cm) {
-    if (height_cm <= 0) return 0.0;
-    
-    double height_m = height_cm / 100.0;  // Convert cm to meters
-    double bmi = weight_kg / (height_m * height_m);  // BMI calculation
-    return bmi;
-}
+int accumulate(int n);
 
 int main() {
-    double weight1, weight2, height1, height2;
-
-    weight1 = 80;
-    weight2 = 70;
-    height1 = 168;
-    height2 = 188;
-
-    std::cout << "Your BMI is: " << calculateBMI(weight1, height1) << std::endl;
-    std::cout << "Another BMI is: " << calculateBMI(weight2, height2) << std::endl;
-
+    int number = 100;
+    cout << "從1加到" << number << "總合為: " << accumulate(number);
     return 0;
+}
+
+int accumulate(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    return n + accumulate(n - 1);
 }
